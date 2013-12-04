@@ -2,7 +2,7 @@ execute "Update yum Development Tools" do
   command "yum -y groupupdate \"Development Tools\""
 end
 
-%w{git libxml2-devel libcurl-devel libjpeg-turbo-devel libpng-devel giflib-devel gd-devel libmcrypt-devel sqlite-devel libtidy-devel libxslt-devel}.each do |name|
+%w{git libxml2-devel libcurl-devel libjpeg-turbo-devel libpng-devel giflib-devel gd-devel libmcrypt-devel sqlite-devel libtidy-devel libxslt-devel libicu libicu-devel}.each do |name|
   package name do
     action :install
   end

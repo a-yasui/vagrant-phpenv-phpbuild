@@ -1,8 +1,8 @@
 # vagrant-phpenv-phpbuild
 
-Vagrant / Chef files for PHP Server(phpenv and phpbuild, nginx)
+Vagrant / Chef files for PHP Server(phpenv and phpbuild, nginx) with Jenkins
 
-phpenv + php-build 環境を CentOS6.4 上に構築します。デフォルトでは PHP5.3.26 / PHP5.4.16 / PHP5.5.0 が入ります。
+phpenv + php-build + Jenkins 環境を CentOS6.4 上に構築します。デフォルトでは PHP5.3.26 / PHP5.4.16 / PHP5.5.0 が入ります。
 
 nginx + php-fpm を別ポートで起動させるので、同じ PHP ファイルを、それぞれの PHP 上で動作させることができます。
 
@@ -33,7 +33,7 @@ nginx + php-fpm を別ポートで起動させるので、同じ PHP ファイ�
     $ cd vagrant-phpenv-phpbuild
     $ vagrant up
 
-  デフォルトでは PHP5.3, PHP5.4, PHP5.5 がインストールされます。（インストールには時間がかかるのでコーヒーで一服して下さい:D）
+  デフォルトでは PHP5.3, PHP5.4, PHP5.5, Jenkins がインストールされます。（インストールには時間がかかるのでコーヒーで一服して下さい:D）
 
 ### 5. インストールできたか確認
 
@@ -43,6 +43,7 @@ nginx + php-fpm を別ポートで起動させるので、同じ PHP ファイ�
   * http://192.168.33.14:8053/ にアクセスすると PHP5.3（php-fpm は 9053）
   * http://192.168.33.14:8054/ にアクセスすると PHP5.4（php-fpm は 9054）
   * http://192.168.33.14:8055/ にアクセスすると PHP5.5（php-fpm は 9055）
+  * http://192.168.33.14:8080/ にアクセスすると Jenkins の画面
 
 ### 6. docroot
 

@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
 
   #config.omnibus.chef_version = "11.4.0"
 
-  config.vm.synced_folder "./public_html", "/public_html", :create => true, :owner=> 'vagrant', :group=>'vagrant', :mount_options => ['dmode=777,fmode=666']
+  config.vm.synced_folder "./public_html", "/public_html", :create => true, :owner=> 'vagrant', :group=>'vagrant', :mount_options => ['dmode=777,fmode=777']
 
   config.vm.provider :virtualbox do |vb|
     #vb.customize ["modifyvm", :id, "--memory", 1024]
@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "phpenv_phpbuild"
     chef.json = {
       :php_global_version => "5.5.0",
-      :php_configure_options => "",
+      :php_configure_options => "--enable-intl --with-mcrypt",
       :php => [
         {
           :version => "5.3.26",
@@ -44,5 +44,6 @@ Vagrant.configure("2") do |config|
         }
       ]
     }
+    chef.add_recipe "yum_jenkins"
   end
 end
