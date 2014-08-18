@@ -16,7 +16,7 @@ bash "Install phpenv with php-build plugin" do
 
   code <<-EOH
   export PHPENV_ROOT=/home/vagrant/.phpenv
-  curl https://raw.github.com/CHH/phpenv/master/bin/phpenv-install.sh | bash
+  curl https://raw.githubusercontent.com/CHH/phpenv/master/bin/phpenv-install.sh | bash
   mkdir /home/vagrant/.phpenv/plugins
   cd /home/vagrant/.phpenv/plugins && git clone git://github.com/CHH/php-build.git
   echo 'PATH=$HOME/.phpenv/bin:$PATH # Add phpenv to PATH for scripting' >> /home/vagrant/.bashrc
